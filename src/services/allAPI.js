@@ -1,5 +1,3 @@
-
-
 //register api
 
 import { BASE_URL } from "./baseurl"
@@ -45,3 +43,13 @@ export const allplan=async(reqheader)=>{
             return  await commonAPI('DELETE',`${BASE_URL}/plans/deleteplay/${id}`,{},reqheader)
           }
       
+          export const updateProfileAPI = async(userID,reqBody,reqheader)=>{
+            //project id is passed as path parameter
+            return await commonAPI('PUT',`${BASE_URL}/user/update/${userID}`,reqBody,reqheader)
+         }  
+
+
+         export const allUsersAPI=async(reqheader)=>{
+          //query parameter=path?key
+            return  await commonAPI('GET',`${BASE_URL}/users/allusers`,"",reqheader)
+          }

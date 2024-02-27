@@ -34,42 +34,54 @@ getadetails()
 
   return (
 <div className='m-5 '>
-<Container fluid className='mt-5 p-5 rounded ' style={{backgroundColor:'#212121  '}}>
+<Container fluid className='mt-5 p-5 rounded '>
 
 <Row  className=''>
   {/* Title and Image */}
-  <Col md={4}>
+  <Col md={6}>
     <div style={{ backgroundColor: '', padding: '20px' }}>
-      <h3 className='text-dark mt-5 ms-5'>{detail.title}</h3>
-      <img className='ms-5 mb-5 mt-5 rounded border'
+      <h1 className='text-dark mt- ms-5' style={{fontWeight:'bolder'}}>{detail.title}</h1>
+      <img className='detail ms-5 mb-5 mt-5 rounded border'
         src={`${BASE_URL}/uploads/${detail.image}`}
         alt="Card Image"
-        style={{ width: '450px', height: '400px' }}
+        style={{ width: '520px', height: '450px' }}
       />
     </div>
   </Col>
 
   {/* Focus Area */}
-  <Col md={4}>
+  <Col md={6}>
 
+   <div className='border  ' >
    <div>
-    <h1 className='mt-5 ' style={{marginLeft:'120px',opacity:'0.3'}}>Focus area</h1>
-      <div style={{ padding: '20px' }} className='mt-4 ms-5 '>
-      <h5  className='   ' style={{fontSize:'20px'}}>{detail.focusArea}</h5>
+    <h1 className=' mt-4' style={{marginLeft:'70px',opacity:'0.3',fontWeight:'bolder'}}>Focus area</h1>
+      <div style={{ padding: '20px' }} className='mt-2 ms-5 '>
+      <h2  className=' w-100   ' style={{fontSize:'20px'}}>{detail.focusArea}</h2>
       {/* Your focus area content goes here */}
+    </div>
+   </div>
+
+
+   <div className=''>
+      <h1 className=' 'style={{marginLeft:'75px',opacity:'0.3',fontWeight:'bolder'}} >Repeat</h1>
+    <div style={{ padding: '20px' }} className='mt-2 ms-5'>
+      <h2 className='ms-2' style={{fontSize:'35px' ,fontWeight:'bold'}}>{detail.repeat}</h2>
+      {/* Your instructions conten  goes here */}
+    </div>
+    </div>
+    <div className=''>
+      <h1 className=' 'style={{marginLeft:'75px',opacity:'0.3',fontWeight:'bolder'}} >Instruction</h1>
+    <div style={{ padding: '20px' }} className='mt-1 ms-5'>
+      <h2 className='' style={{fontSize:'20px'}}>{detail.instructions}</h2>
+      {/* Your instructions conten  goes here */}
+    </div>
     </div>
    </div>
   </Col>
 
   {/* Instructions */}
   <Col md={4}>
-    <div className=''>
-      <h1 className='mt-5 'style={{marginLeft:'75px',opacity:'0.3'}} >Instruction</h1>
-    <div style={{ padding: '20px' }} className='mt-4 ms-5'>
-      <h5 className='' style={{fontSize:'20px'}}>{detail.instructions}</h5>
-      {/* Your instructions conten  goes here */}
-    </div>
-    </div>
+   
   </Col>
 </Row>
 

@@ -7,6 +7,9 @@ import { Form } from 'react-bootstrap'
 import { loginAPI, registerAPI } from '../services/allAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from 'sweetalert2';
+
+
 
 
 function Auth({Register}) {
@@ -62,13 +65,14 @@ function Auth({Register}) {
 
         const{email,password}=userData
         if(!email || !password){
-            alert('please fill the form compltely')
+            toast.danger('please fill the form compltely')
         }else{
             const result = await loginAPI(userData)
             console.log(result);
 
             if(result.status===200){
-                alert('Login successfull')
+               toast.success('Login successfull')
+
 
                 sessionStorage.setItem("existingUser",JSON.stringify(result.data.existingUser))
                 sessionStorage.setItem("token",result.data.token)
@@ -81,10 +85,17 @@ function Auth({Register}) {
 
                 //navigate to home
 if (result.data.existingUser.username =="admin" && result.data.existingUser.email =="admin@gmail.com" && result.data.existingUser.password =="admin") {
-    navigate(`/addworkout`)
+    
+    setTimeout(()=>{
+       navigate(`/addworkout`)
+
+    },2500)
 }
  else{
-    navigate(`/program`)
+    setTimeout(()=>{
+        navigate(`/program`)
+ 
+     },2500)
 
 }
 
@@ -102,20 +113,19 @@ if (result.data.existingUser.username =="admin" && result.data.existingUser.emai
 
   return (
     
-   <div style={{width:'100%', height:'100vh'}} className='d-flex justify-content-center align-items-center'>
+   <div style={{width:'100%', height:'100vh'}} className= '  d-flex justify-content-center align-items-center'>
     
     <div className=' w-75 container ' >
    
     
-    <div className='card p-5 rounded   ' >
-        <div className='row align-items-center rounded shadow'style={{backgroundColor:"black"}}>
+    <div className=' login p-5 rounded   ' style={{backgroundColor:'black'}}>
+        <div className='row align-items-center rounded shadow border mt-4 '>
         <div className='col-lg-6 '>
-            <img src='https://kalamtimes.com/uploads/images/news/20231006/1696592615_i.jpg' style={{opacity:'0.5'}} alt="no image" width={'100%'} />
-
+           
         </div>
         <div className='  col-lg-6 p-5'>
             <div className='d-flex align-items-center flex-column'>
-            <h1 className='text-center  ' style={{color:'red',fontWeight:'bold'}}>
+            <h1 className='text-center  ' style={{color:'wheat',fontWeight:'bold'}}>
             <span style={{fontSize:'150px'}}>𝕩</span>treme Fitness</h1>
             <h5 className='  ms-3  ' style={{fontWeight:'bold',fontSize:'35px',opacity:"0.2"}}>
              {
@@ -128,19 +138,19 @@ if (result.data.existingUser.username =="admin" && result.data.existingUser.emai
              {
                 registerForm &&
                 <Form.Group className="mb-3 " controlId="formBasicEmail">
-                    <Form.Control type="text" placeholder="username" value={userData.username}
+                    <Form.Control className='bg-transparent border' type="text" placeholder="username" value={userData.username}
                      onChange={(e)=>setUserData({...userData,username:e.target.value})} />
                 </Form.Group>
 
              }
               <Form.Group className="mb-3  " controlId="formBasicEmail" >
-                <Form.Control    type="email" placeholder="Email Id " 
+                <Form.Control className='bg-transparent border'   type="email" placeholder="Email Id " 
                      value={userData.email}
                     onChange={(e)=>setUserData({...userData,email:e.target.value})}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control type="password" placeholder="password" 
+                    <Form.Control className='bg-transparent border'  type="password" placeholder="password" 
                      value={userData.password}
                         onChange={(e)=>setUserData({...userData,password:e.target.value})}/>
                 </Form.Group>

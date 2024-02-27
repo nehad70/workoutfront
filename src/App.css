@@ -1,3 +1,135 @@
-.card:hover{
+
+
+
+.chest:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.08);  
+}
+.back:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.08);  
+}
+.shoulder:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.08);  
+}
+.leg:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.06);  
+}
+.biceps:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.06);  
+}
+.play:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.04);  
+}
+.detail:hover{
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0,0,0,0.2);
+      transform: scale(1.18);  
+}
+.profile{
+      background-image: url('https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?cs=srgb&dl=pexels-leon-ardho-1552242.jpg&fm=jpg');
+      width: 100%;
+      height: 100vh !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      position: relative;
+}
+.welcome{
+  background-image: url('https://w.forfun.com/fetch/d3/d3e4b7244abd48bb2b0752cc1e9a5653.jpeg') ;
+      width: 100%;
+      height: 140vh !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      border: 6px;
+
+      position: relative;
+}
+.play{
+ 
+
+box-sizing: border-box;
+      
+
 
 }
+.login{
+      background-image: url('https://media2.giphy.com/media/iIBMOeBNjDIuFuv0AI/giphy.gif?cid=ecf05e4730nqg7eca17j7oehru94ir1w60e0r81b4r28961i&ep=v1_gifs_related&rid=giphy.gif&ct=g');
+      width: 100%;
+      height: 80vh !important;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+      border: 6px;
+
+      position: relative;
+}
+.rating{
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      margin-top: 80px;
+      font-weight: bolder;
+      flex-direction: column;
+}
+.stars{
+      cursor: pointer;
+      font-size: 55px;
+      
+}
+.stars:hover{
+      
+      transform:scale(1.10) ;
+}
+.selected{
+      color: rgb(182, 142, 31);
+}
+.rate{
+      font-size: 45px;
+      margin-top: 80px;
+      font-weight: bolder;
+      color: gray;
+
+}
+.box{
+      font-size: 20px; 
+      height: 40px;
+      width: 500px;
+      background: transparent;
+      
+
+}
+.input{ 
+      display: flex;
+      flex-direction: column;
+}
+.feedback{
+      height: 90px;
+      
+}
+.rating{ 
+      height: 700px;
+      background-image: url('https://mrwallpaper.com/images/hd/download-fitness-wallpaper-bzk3ce69z2p04myk.jpg');
+}
+.box input::placeholder {
+      color: #999; /* Placeholder text color */
+      font-style: italic; /* Placeholder text style */
+      /* Add any additional styling here */
+  }
+      

@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import { BASE_URL } from '../services/baseurl';
 import AddWorkout from './Addworkout';
+import Header from '../components/Header';
 function Play() {
   
   const [cat, setcat] = useState([]);
@@ -45,23 +46,33 @@ function Play() {
   }, [gplan, params.cat]);
 
   return (
-    <Container>
+   <div className='welcome '>
+    <Header/>
     
-          
-
+     <Container  className=''>
+  
+  
          {
           cat?.length>0?
           cat?.map((item)=>(
-          <Link to={`/details/${item._id}`}>  
-          <Card style={{ width: '50rem' }} className='mt-4 rounded'>
+          <Link style={{textDecoration:'none'}} to={`/details/${item._id}`}>  
+          <Card style={{ width: '75rem' }} className='play mt-4 rounded bg-transparent border p-1' >
 
-          <div className="row">
-            <div className="col-lg-4"><img src={`${BASE_URL}/uploads/${item.image}`} width={'100%'} alt="" />
+          <div className="row ">
+            <div className="col-lg-4"><img src={`${BASE_URL}/uploads/${item.image}`} width={'200pc'} alt="" />
 </div>
-            <div className="col-lg-8">
-             <h1>{AddWorkout.title}</h1>
+            <div className="col-lg-8 d-flex">
+            <div className="col-lg-8 d-flex">
+             <h3 className='m-3  mt-5' style={{fontWeight:'bold'}}>{item.title}</h3>
+            
             </div>
+            <div>
+            <h3 className=' mt-5' style={{color:'wheat',fontWeight:'bold',marginLeft:'125px',opacity:'0.5'}}>{item.repeat}</h3>
+            </div>
+            </div>
+            
           </div>
+          
         </Card>
           </Link>
 
@@ -75,6 +86,7 @@ function Play() {
 
     
     </Container>
+   </div>
   );
 }
 

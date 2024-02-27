@@ -17,6 +17,7 @@ import Admin from './components/Admin';
 import Header2 from './components/Header2';
 import About from './components/About';
 import Addedplay from './components/Addedplay';
+import Rating from './components/Rating';
 
 function App() {
   return (
@@ -52,7 +53,8 @@ function App() {
 
         <Route path='/addedplay/:cat' element={<Addedplay/>}/>
         
-        <Route path='/trainers' element={<Trainers/>}/>
+        <Route path='/trainer' element={<Trainers/>}/>
+        <Route path='/rating' element={<Rating/>}/>
 
 
 
